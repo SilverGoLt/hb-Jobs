@@ -1,4 +1,4 @@
-ESX = exports['rc-core']:getSharedObject()
+ESX = exports['es_extended']:getSharedObject()
 
 _playerData = {
     job = {},
