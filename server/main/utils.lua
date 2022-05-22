@@ -1,4 +1,4 @@
-ESX = exports['rc-core']:getSharedObject()
+ESX = exports['es_extended']:getSharedObject()
 
 RegisterCommand('getPos', function(source)
     local ped = GetPlayerPed(source)
