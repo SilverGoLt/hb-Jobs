@@ -20,13 +20,14 @@ end)
 ESX.RegisterCommand('revive', 'admin', function(xPlayer, args, showError)
 	 args.playerId.triggerEvent('esx_ambulancejob:revive')
   end, true,
-  {help = 'yeet', validate = true, arguments = {
-	{name = 'playerId', help = 'The player id', type = 'player'}
+    {help = 'Revive Player', validate = true, arguments = {
+    {name = 'playerId', help = 'The player id', type = 'player'}
 }})
 
 RegisterCommand('kill', function(source, args)
     TriggerClientEvent('medic:setDead', args[1])
     local xPlayer = ESX.GetPlayerFromId(args[1])
+
     addPlayerToTable(_downed, xPlayer.identifier)
 end, true)
 
@@ -36,6 +37,7 @@ lib.callback.register('medic:useDefib', function(source, target)
     local pos = GetEntityCoords(GetPlayerPed(source))
     local job = isJob(source, 'ambulance')
     local isDead = checkTable(_downed, xTarget.identifier)
+
     playSound(source, 10, 'defib.mp3', 0.8)
     if job and isDead then
         xPlayer.addMoney(500)

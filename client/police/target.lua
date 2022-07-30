@@ -11,7 +11,7 @@ exports.qtarget:Player({
 			event = "",
 			icon = "fa-solid fa-handcuffs",
 			label = "Tempti Asmeni",
-            job = 'police',
+            job = {['police'] = 0},
 			canInteract = function(entity)
 				return DecorGetBool(entity, 'isCuffed')
 			end,

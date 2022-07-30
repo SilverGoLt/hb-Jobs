@@ -35,6 +35,8 @@ checkTable = function(table, identifier)
             return true
         end
     end
+
+    return false
 end
 
 ---Sends the event to the client
